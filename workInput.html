@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear orden de trabajo</title>
+</head>
+<body>
+    <h1>Nueva orden de trabajo</h1>
+    <form action="" method="post">
+        <div>
+            <label for="document">Documento del cliente</label>
+            <input type="text">
+        </div>
+
+        <div>
+            <label for="description">Descripción del trabajo</label>
+            <div>
+                <textarea name="description" id="" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div>
+            <label for="checkingEmbroidery">¿Hay bordado(s)?</label>
+            
+            <div>
+                <input type="radio" name="embroidery" id="true" value="true" onclick="changeVisibility()">
+                <label for="radio_true">Si</label>
+            </div>
+
+            <div>
+                <input type="radio" name="embroidery" id="false" value="false" onclick="changeVisibility()">
+                <label for="radio_false">No</label>
+            </div>
+        </div>
+
+        <div class="embroidery-true">
+            <label for="descEmb">Decsripcion de los bordados</label>
+            <div>
+                <textarea name="descriptionEmb" id="descEmb" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <input type="submit" value="Confirmar">
+    </form>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
