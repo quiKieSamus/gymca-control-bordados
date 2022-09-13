@@ -30,15 +30,47 @@
             </div>
 
             <div>
-                <input type="radio" name="embroidery" id="false" value="false" onclick="changeVisibility()">
+                <input type="radio" name="embroidery" id="false" checked="true" value="false" onclick="changeVisibility()">
                 <label for="radio_false">No</label>
             </div>
         </div>
 
         <div class="embroidery-true">
-            <label for="descEmb">Decsripcion de los bordados</label>
+            <label for="clothQty">¿Cuántas prendas a bordar?</label>
             <div>
-                <textarea name="descriptionEmb" id="descEmb" cols="30" rows="10"></textarea>
+                <input type="number" name="embClothQty" id="embClothQty">
+            </div>
+            
+            <label for="embXCloth">¿Cuántos bordados por cada prenda?</label>
+            <div>
+                <input type="number" name="embXCloth" id="embXCloth">
+            </div>
+
+            <label for="position">Posición de cada bordado</label>
+            <div>
+                <label for="">¿Lleva bordado en pectoral?</label>
+                <div>
+                    <label for="">Si</label>
+                    <input type="radio" name="chest" id="chestTrue" value="true">
+                    <label for="">No</label>
+                    <input type="radio" name="chest" id="chestFalse" value="false">
+                </div>
+
+                <label for="">¿Lleva bordado en manga(s)?</label>
+                <div>
+                    <label for="">Si</label>
+                    <input type="radio" name="sleeves" id="sleevesTrue" value="true">
+                    <label for="">No</label>
+                    <input type="radio" name="sleeves" id="sleevesFalse" value="false">
+                </div>
+
+                <label for="">¿Lleva bordado en espalda?</label>
+                <div>
+                    <label for="">Si</label>
+                    <input type="radio" name="back" id="backTrue" value="true">
+                    <label for="">No</label>
+                    <input type="radio" name="back" id="backFalse" value="false">
+                </div>
             </div>
         </div>
         <input type="submit" value="Confirmar">

@@ -8,3 +8,5 @@ const changeVisibility = () => {
     }
     
 }
+
+addEventListener('DOMContentLoaded', changeVisibility());
