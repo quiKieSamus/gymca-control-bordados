@@ -15,10 +15,6 @@ const changeVisibility = (n, bool) => {
     
 }
 
-const onSubmitEvent = (n /*embroidery number*/) => {
-
-}
-
 addEventListener('DOMContentLoaded', () => {
     for(let i = 0; i < document.querySelectorAll('.showDiv').length; i++) {
         document.querySelectorAll('.showDiv')[i].style.display = 'none';
