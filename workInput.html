@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear orden de trabajo</title>
 </head>
+
 <body>
     <h1>Nueva orden de trabajo</h1>
     <form action="" method="post">
@@ -14,68 +16,80 @@
             <input type="text">
         </div>
 
+
+        <div>
+            <label for="checkingEmbroidery">¿Hay bordado(s)?</label>
+
+            <input type="radio" name="embroidery" id="true" value="true" onclick="changeVisibility(0, true)">
+            <label for="radio_true">Si</label>
+
+            <input type="radio" name="embroidery" id="false" checked="true" value="false"
+                onclick="changeVisibility(0, false)">
+            <label for="radio_false">No</label>
+        </div>
+
+        <div class="showDiv showDiv0">
+            <label for="clothQty">¿Cuántas prendas a bordar?</label>
+            <div>
+                <input type="number" name="embClothQty" id="embClothQty">
+            </div>
+
+            <label for="embXCloth">¿Cuántos bordados por cada prenda?</label>
+            <div>
+                <input type="number" name="embXCloth" id="embXCloth">
+            </div>
+
+            <label for="positionEmb">Posición de cada bordado</label>
+            <div>
+                <div>
+                    <label for="">¿Lleva bordado en pectoral?</label>
+                    <div>
+                        <label for="">Si</label>
+                        <input type="radio" name="chest" id="chestTrue" value="true">
+                        <label for="">No</label>
+                        <input type="radio" name="chest" id="chestFalse" value="false">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="">¿Lleva bordado en manga(s)?</label>
+                    <div>
+                        <label for="">Si</label>
+                        <input type="radio" name="sleeves" id="sleevesTrue" value="true">
+                        <label for="">No</label>
+                        <input type="radio" name="sleeves" id="sleevesFalse" value="false">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="">¿Lleva bordado en espalda?</label>
+                    <div>
+                        <label for="">Si</label>
+                        <input type="radio" name="back" id="backTrue" value="true" onclick="changeVisibility(1, true)">
+                        <label for="">No</label>
+                        <input type="radio" name="back" id="backFalse" value="false"
+                            onclick="changeVisibility(1, false)">
+                    </div>
+                    <div class="showDiv showDiv1">
+                        <label for="">¿Cuántos?</label>
+                        <div>
+                            <input type="number" name="backEmbQty" id="backEmbQty">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div>
             <label for="description">Descripción del trabajo</label>
             <div>
                 <textarea name="description" id="" cols="30" rows="10"></textarea>
             </div>
         </div>
-
-        <div>
-            <label for="checkingEmbroidery">¿Hay bordado(s)?</label>
-            
-            <div>
-                <input type="radio" name="embroidery" id="true" value="true" onclick="changeVisibility()">
-                <label for="radio_true">Si</label>
-            </div>
-
-            <div>
-                <input type="radio" name="embroidery" id="false" checked="true" value="false" onclick="changeVisibility()">
-                <label for="radio_false">No</label>
-            </div>
-        </div>
-
-        <div class="embroidery-true">
-            <label for="clothQty">¿Cuántas prendas a bordar?</label>
-            <div>
-                <input type="number" name="embClothQty" id="embClothQty">
-            </div>
-            
-            <label for="embXCloth">¿Cuántos bordados por cada prenda?</label>
-            <div>
-                <input type="number" name="embXCloth" id="embXCloth">
-            </div>
-
-            <label for="position">Posición de cada bordado</label>
-            <div>
-                <label for="">¿Lleva bordado en pectoral?</label>
-                <div>
-                    <label for="">Si</label>
-                    <input type="radio" name="chest" id="chestTrue" value="true">
-                    <label for="">No</label>
-                    <input type="radio" name="chest" id="chestFalse" value="false">
-                </div>
-
-                <label for="">¿Lleva bordado en manga(s)?</label>
-                <div>
-                    <label for="">Si</label>
-                    <input type="radio" name="sleeves" id="sleevesTrue" value="true">
-                    <label for="">No</label>
-                    <input type="radio" name="sleeves" id="sleevesFalse" value="false">
-                </div>
-
-                <label for="">¿Lleva bordado en espalda?</label>
-                <div>
-                    <label for="">Si</label>
-                    <input type="radio" name="back" id="backTrue" value="true">
-                    <label for="">No</label>
-                    <input type="radio" name="back" id="backFalse" value="false">
-                </div>
-            </div>
-        </div>
+        <input type="radio" id="test">
         <input type="submit" value="Confirmar">
     </form>
 
     <script src="./js/script.js"></script>
 </body>
+
 </html>
