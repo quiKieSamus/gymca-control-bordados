@@ -32,7 +32,7 @@ if (isset($_POST['doc']) && isset($_POST['description'])) {
                         echo "<h1>Los datos fueron ingresados incorrectamente</h1>";
                     }
                 }
-                $sql1 = "INSERT INTO trabajo(descripcion, cantidad, total, cliente, bordadoPrenda) VALUES('$desc', '$embClothQty', '$total', '$sql0Result[documento]', '$embXCloth')";
+                $sql1 = "INSERT INTO bordado(descripcion, cantidad, total, cliente, bordadoPrenda) VALUES('$desc', '$embClothQty', '$total', '$sql0Result[documento]', '$embXCloth')";
                 mysqli_query($con, $sql1);
                 mysqli_query($con, $increaseWorkNumber);
             } else {
@@ -40,7 +40,7 @@ if (isset($_POST['doc']) && isset($_POST['description'])) {
                 echo "<h1>Los datos fueron ingresados incorrectamente</h1>";
             }
         } else {
-            $sqlToInsert0 = "INSERT INTO trabajo(descripcion, cliente) VALUES ('$desc', '$doc')";
+            $sqlToInsert0 = "INSERT INTO confeccion(descripcion, cliente) VALUES ('$desc', '$doc')";
             mysqli_query($con, $sqlToInsert0);
 
             mysqli_query($con, $increaseWorkNumber);
