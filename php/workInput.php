@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nueva Orden de Trabajo</title>
+</head>
+<body>
 <?php
 include("./dbConfig/config.php");
 
@@ -53,3 +62,7 @@ if (isset($_POST['doc']) && isset($_POST['description'])) {
     //data was set incorrectly
     echo "<h1>Los datos fueron ingresados incorrectamente</h1>";
 }
+?>
+
+</body>
+</html>
