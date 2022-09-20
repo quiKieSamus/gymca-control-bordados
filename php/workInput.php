@@ -9,6 +9,10 @@ if (isset($_POST['doc']) && isset($_POST['description'])) {
     $sql0 = "SELECT documento FROM clientes WHERE documento='$doc'";
     $sql0Query = mysqli_query($con, $sql0);
     $sql0Result = mysqli_fetch_array($sql0Query);
+    $amountOfWork = "SELECT trabajo FROM clientes WHERE documento='$doc'";
+    $amountOfWorkQuery = mysqli_query($con, $amountOfWork);
+    $amountOfWorkResult = mysqli_fetch_array($amountOfWorkQuery);
+    $increaseWorkNumber = "UPDATE clientes SET trabajo=('$amountOfWorkResult[trabajo]' + 1) WHERE documento='$doc'";
     if (mysqli_num_rows(mysqli_query($con, $sql0)) > 0) {
         //client exists and the order is processed
         if ($emb === 'true') {
@@ -30,13 +34,16 @@ if (isset($_POST['doc']) && isset($_POST['description'])) {
                 }
                 $sql1 = "INSERT INTO trabajo(descripcion, cantidad, total, cliente, bordadoPrenda) VALUES('$desc', '$embClothQty', '$total', '$sql0Result[documento]', '$embXCloth')";
                 mysqli_query($con, $sql1);
+                mysqli_query($con, $increaseWorkNumber);
             } else {
                 //information was set incorrectly
                 echo "<h1>Los datos fueron ingresados incorrectamente</h1>";
             }
         } else {
-            $sqlToInsert0 = "INSERT INTO trabajo(descripcion, cliente) VALUES ('$desc', '$sql0Result[documento]')";
+            $sqlToInsert0 = "INSERT INTO trabajo(descripcion, cliente) VALUES ('$desc', '$doc')";
             mysqli_query($con, $sqlToInsert0);
+
+            mysqli_query($con, $increaseWorkNumber);
         }
     } else {
         //client doesn't exists and the creation of the new client must be done 
