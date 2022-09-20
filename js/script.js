@@ -31,6 +31,10 @@ const changeVisibility = (n, bool) => {
 
 }
 
+// const translateToEs = (el) => {
+
+// }
+
 addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < document.querySelectorAll('.showDiv').length; i++) {
         document.querySelectorAll('.showDiv')[i].style.display = 'none';
