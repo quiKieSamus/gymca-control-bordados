@@ -10,10 +10,10 @@
 
 <body>
     <h1>Nueva orden de trabajo</h1>
-    <form action="" method="post">
+    <form action="./php/workInput.php" method="post">
         <div>
             <label for="document">Documento del cliente</label>
-            <input type="text">
+            <input type="text" required name="doc" id="doc">
         </div>
 
 
@@ -39,7 +39,6 @@
                 <input type="number" name="embXCloth" id="embXCloth">
             </div>
 
-            <label for="positionEmb">Posición de cada bordado</label>
             <div>
                 <div>
                     <label for="">¿Lleva bordado en espalda?</label>
@@ -47,7 +46,7 @@
                         <label for="">Si</label>
                         <input type="radio" name="back" id="backTrue" value="true" onclick="changeVisibility(1, true)">
                         <label for="">No</label>
-                        <input type="radio" name="back" id="backFalse" value="false"
+                        <input type="radio" checked="true" name="back" id="backFalse" value="false"
                             onclick="changeVisibility(1, false)">
                     </div>
                     <div class="showDiv showDiv1">
@@ -62,7 +61,7 @@
         <div>
             <label for="description">Descripción del trabajo</label>
             <div>
-                <textarea name="description" id="" cols="30" rows="10"></textarea>
+                <textarea name="description" id="desc" cols="30" rows="10" required placeholder="Ingrese una descripción del trabajo. Ej: Confeccion de 10 camisas columbia, cada una con 2 bordados, en ambos pectorales."></textarea>
             </div>
         </div>
         <input type="submit" value="Confirmar">
