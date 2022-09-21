@@ -31,9 +31,14 @@ const changeVisibility = (n, bool) => {
 
 }
 
-// const translateToEs = (el) => {
-
-// }
+//event
+const translateToEs = (el) => {
+    if(el.innerText === "internal") {
+        el.innerText = "interno";
+    } else {
+        el.innerText = "externo";
+    }
+}
 
 addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < document.querySelectorAll('.showDiv').length; i++) {

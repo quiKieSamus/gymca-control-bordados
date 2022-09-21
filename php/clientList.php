@@ -34,13 +34,14 @@
             <td>$row[documento]</td>
             <td>$row[nombre]</td>
             <td>$row[trabajo]</td>
-            <td id=type$i>$row[tipo]</td>
+            <td id=\"type$i\" class=\"type\" onclick=\"translateToEs(this)\">$row[tipo]</td>
         </tr>";
         $i++;
         }
         echo "</table>";
         ?>
     </div>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
