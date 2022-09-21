@@ -32,13 +32,21 @@ const changeVisibility = (n, bool) => {
 }
 
 //event
-const translateToEs = (el) => {
-    if(el.innerText === "internal") {
-        el.innerText = "interno";
-    } else {
-        el.innerText = "externo";
+
+const translateToEs = () => {
+    const clientTypeArr = document.querySelectorAll(".type");
+    for (let i = 0; i < clientTypeArr.length; i++) {
+        if (clientTypeArr[i].innerText === "internal") {
+            clientTypeArr[i].innerText = "interno"
+        } else if (clientTypeArr[i].innerText === "external") {
+            clientTypeArr[i].innerText = "externo";
+        } else {
+            clientTypeArr[i].innerText = "error";
+        }
     }
 }
+
+addEventListener('DOMContentLoaded', translateToEs);
 
 addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < document.querySelectorAll('.showDiv').length; i++) {

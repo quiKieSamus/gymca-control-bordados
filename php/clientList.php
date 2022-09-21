@@ -34,7 +34,7 @@
             <td>$row[documento]</td>
             <td>$row[nombre]</td>
             <td>$row[trabajo]</td>
-            <td id=\"type$i\" class=\"type\" onclick=\"translateToEs(this)\">$row[tipo]</td>
+            <td id=\"type$i\" class=\"type\">$row[tipo]</td>
         </tr>";
         $i++;
         }
