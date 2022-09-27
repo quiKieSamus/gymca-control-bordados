@@ -2,6 +2,20 @@
     box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    border: 2px solid black;
+    text-align: justify;
+    justify-content: center;
+    padding: 5px;
+    
+}
+
+.link-item {
+    margin: auto 5px;
+}
+
 .container-client {
     display: flex;
     justify-content: center;
