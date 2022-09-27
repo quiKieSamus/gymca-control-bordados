@@ -37,9 +37,9 @@ const translateToEs = () => {
     const clientTypeArr = document.querySelectorAll(".type");
     for (let i = 0; i < clientTypeArr.length; i++) {
         if (clientTypeArr[i].innerText === "internal") {
-            clientTypeArr[i].innerText = "interno"
+            clientTypeArr[i].innerText = "Interno"
         } else if (clientTypeArr[i].innerText === "external") {
-            clientTypeArr[i].innerText = "externo";
+            clientTypeArr[i].innerText = "Externo";
         } else {
             clientTypeArr[i].innerText = "error";
         }

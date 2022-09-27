@@ -19,6 +19,7 @@ if(isset($name) && isset($doc) && isset($type) && isset($dire)) {
         } else{
             mysqli_query($con, $sql);
             echo "<h1>Cliente ingresado correctamente</h1>";
+            
         }
         
     }
