@@ -34,7 +34,7 @@ if (isset($_POST['doc']) && isset($_POST['description'])) {
                 if ($embBack === 'true') {
                     //clothes have back embroidery
                     if (isset($_POST['backEmbQty'])) {
-                        $backEmbQty = $_POST['backEmbQty'];
+                        $backEmbQty = $_PObST['backEmbQty'];
                         $total += ($backEmbQty * 0.3);
                     } else {
                         //data was set incorrectly 
@@ -49,6 +49,7 @@ if (isset($_POST['doc']) && isset($_POST['description'])) {
                 echo "<h1>Los datos fueron ingresados incorrectamente</h1>";
             }
         } else {
+            //work has no embroidery, therefore goes to another database for confection
             $sqlToInsert0 = "INSERT INTO confeccion(descripcion, cliente) VALUES ('$desc', '$doc')";
             mysqli_query($con, $sqlToInsert0);
 

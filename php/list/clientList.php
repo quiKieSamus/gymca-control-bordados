@@ -50,8 +50,11 @@
             <input type="text" name="searchBar" id="searchBar" class="searchTxt">
         </div>
         <?php
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
         include("../dbConfig/config.php");
-        $sql = "SELECT * FROM CLIENTES";
+        $sql = "SELECT * FROM cliente";
         $sqlQuery = mysqli_query($con, $sql);
         echo "
         <div class='container'>
@@ -60,17 +63,16 @@
                 <th class='text-center'>Documento</th>    
                 <th class='text-center'>Nombre</th>
                 <th class='text-center'>Trabajos Realizados</th>    
-                <th class='text-center'>Tipo de Cliente</th>    
+                <th class='text-center'>Dirección</th>    
                 </tr>";
         $i = 0;
         while ($row = mysqli_fetch_array($sqlQuery)) {
-
             echo "
                         <tr>
                         <td class='success'>$row[documento]</td>
                         <td class='text-center'>$row[nombre]</td>
-                        <td>$row[trabajo]</td>
-                        <td id=\"type$i\" class=\"type\">$row[tipo]</td>
+                        <td>$row[trabajoTotal]</td>
+                        <td>$row[direccion]</td>
                         </tr>";
             $i++;
         }
