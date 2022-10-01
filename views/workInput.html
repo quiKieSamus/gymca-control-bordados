@@ -21,6 +21,19 @@
                 <input type="text" class="form-control" required name="doc" id="doc">
             </div>
 
+            <div>
+                <label for="type">Tipo de cliente:</label>
+                <div>
+                    <input type="radio" name="type" id="external" value="x">
+                    <label for="radio_external">Externo</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="type" id="internal" value="i">
+                    <label for="radio_internal">Interno</label>
+                </div>
+
+            </div>
 
             <div class="form-group">
                 <label for="checkingEmbroidery">¿Hay bordado(s)?</label>
@@ -49,12 +62,12 @@
                     <div>
                         <label for="">¿Lleva bordado en espalda?</label>
                         <div>
-                            <label class="radio-inline" for=""><input type="radio" name="back" id="backTrue" value="true"
-                                onclick="changeVisibility(1, true)">Si</label>
-                            
-                            <label class="radio-inline" for=""><input type="radio" checked="true" name="back" id="backFalse" value="false"
-                                onclick="changeVisibility(1, false)">No</label>
-                            
+                            <label class="radio-inline" for=""><input type="radio" name="back" id="backTrue"
+                                    value="true" onclick="changeVisibility(1, true)">Si</label>
+
+                            <label class="radio-inline" for=""><input type="radio" checked="true" name="back"
+                                    id="backFalse" value="false" onclick="changeVisibility(1, false)">No</label>
+
                         </div>
                         <div class="showDiv showDiv1">
                             <label for="">¿Cuántos?</label>

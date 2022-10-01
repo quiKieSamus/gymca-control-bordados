@@ -4,9 +4,13 @@
     $password = "dostoyevskiwiiu10100";
     $user = "artorias";
     $con = new mysqli($dbServer, $user, $password, $name);
-    if ($con->connect_error) {
-        die("Conexión Fallida: " . $con->connect_error);
-    } else {
-        echo "Conexión exitosa";
+
+    function checkConnection ($con) {
+        if  ($con->connect_error) {
+            die ("Connection failed: " . $con->connect_error);
+        } else {
+            echo "Conecction successful";
+        }
     }
+
 ?>

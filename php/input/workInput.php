@@ -13,9 +13,14 @@
     <?php
     include("../dbConfig/config.php");
 
-    if (isset($_POST['doc']) && isset($_POST['description'])) {
+    //form fields neccesary for a correct work order are:
+        //1.- The Document
+        //2.- Description
+        //3.- Type (wether it's an internal or external work)
+    if (isset($_POST['doc']) && isset($_POST['description']) && isset($_POST['type'])) {
         $doc = $_POST['doc'];
         $desc = $_POST['description'];
+        $type = $_POST['type'];
         $emb = $_POST['embroidery'];
         $embBack = $_POST['back'];
         $sql0 = "SELECT documento FROM cliente WHERE documento='$doc'";
@@ -50,7 +55,8 @@
                                 echo "<h1>Los datos fueron ingresados incorrectamente</h1>";
                             }
                         }
-                        $sql1 = "INSERT INTO bordado(prenda_total, bordado_prenda, entrada, descripcion, documento) VALUES('$embClothQty', '$embXCloth', '$total', '$desc', '$sql0Result[documento]')";
+
+                        $sql1 = "INSERT INTO bordado(prenda_total, bordado_prenda, entrada, descripcion, documento, tipo_trabajo) VALUES('$embClothQty', '$embXCloth', '$total', '$desc', '$sql0Result[documento]', '$type')";
                         
                         $con->query($sql1);
                         $con->query($increaseWorkNumber);
