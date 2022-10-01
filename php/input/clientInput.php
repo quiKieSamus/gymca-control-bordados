@@ -11,7 +11,6 @@
 <body>
     <?php
     include "../dbConfig/config.php";
-
     $name = $_POST["name"];
     $doc = $_POST["doc"];
     $dire = $_POST["address"];
@@ -20,15 +19,19 @@
     if (isset($name) && isset($doc) && isset($dire)) {
         $sql = "INSERT INTO cliente(nombre, documento, direccion) VALUES ('$name', '$doc', '$dire')";
         
-        if (!$con) {
-            die("Conexion fallida, asegúrese que los datos para la conexión a la base de datos de los clientes esten correctos.");
+        if ($con->connect_error) {
+            die($con->connect_error);
         } else {
             
             $sqlSelect = "SELECT documento FROM cliente WHERE documento='$doc'";
-            if (mysqli_num_rows(mysqli_query($con, $sqlSelect)) > 0) {
+            $sqlSelectResult = $con->query($sqlSelect);
+            if ($sqlSelectResult->num_rows > 0) {
                 echo "<h1>El cliente ya existe</h1>";
             } else {
-                mysqli_query($con, $sql);
+                
+                $con->query($sql);
+                $con->close();
+
                 echo "<h1>Cliente ingresado correctamente</h1>";
             }
         }
