@@ -17,6 +17,8 @@ function getProjectRoot($projectRoot)
     
     return $realPRoot.'/'. $projectRoot;
 }
+echo getProjectRoot('gymca-control-bordados');
+echo scandir('../')[5];
 
 // echo getProjectRoot('gymca-control-bordados');
 
