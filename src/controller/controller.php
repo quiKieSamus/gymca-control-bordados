@@ -17,3 +17,6 @@ if ($_GET['view'] === 'bordado') {
     $bordadoData = $bordadoModel->select();
     require_once('../src/views/bordadoView.php');
 }
+if($_GET['view']=== 'login') {
+    require_once('../src/views/login.php');
+}

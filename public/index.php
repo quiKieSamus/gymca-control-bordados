@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Gymca Control Bordados</title>
 
 
 </head>
@@ -33,6 +34,7 @@
     require_once('../src/db/db.php'); ?>
     <a href="http://localhost/gymca-control-bordados/public/?view=cliente">Ver Clientes</a>
     <a href="http://localhost/gymca-control-bordados/public/?view=bordado">Ver Bordados</a>
+    <a href="http://localhost/gymca-control-bordados/public/?view=login">Iniciar Sesión</a>
     <div class="container">
         <?php require_once('../src/controller/controller.php'); ?>
     </div>
@@ -41,7 +43,6 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" rel="stylesheet"></script>
-    <title>Inicio</title>
 </body>
 
 </html>
