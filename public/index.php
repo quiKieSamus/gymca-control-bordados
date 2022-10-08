@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div>
+    <!-- <div>
         <div class="container">
             <h1 class="text-center"><button class="btn btn-secondary btn-block"><a class="alert-link" href="./views/clientInput.html">Ingresar cliente</a></button></h1>
         </div>
@@ -25,6 +25,16 @@
         <div class="container">
             <h1 class="text-center"><button class="btn btn-secondary btn-block"><a href="">Lista de Órdenes de Trabajo</a></button></h1>
         </div>
+    </div> -->
+    <?php
+    ini_set("display_errors", "1");
+    ini_set("display_startup_errors", "1");
+    error_reporting(E_ALL);
+    require_once('../src/db/db.php'); ?>
+    <a href="http://localhost/gymca-control-bordados/public/?view=cliente">Ver Clientes</a>
+    <a href="http://localhost/gymca-control-bordados/public/?view=bordado">Ver Bordados</a>
+    <div class="container">
+        <?php require_once('../src/controller/controller.php'); ?>
     </div>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
