@@ -43,6 +43,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" rel="stylesheet"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

@@ -20,7 +20,7 @@
                     <td class=success>$row[documento]</td>
                     <td>$row[prenda_total]</td>
                     <td>$row[bordado_prenda]</td>
-                    <td>$row[entrada]</td>
+                    <td>$row[entrada]$</td>
                     <td>$row[descripcion]</td>
                     <td class=text-center>$row[tipo_trabajo]</td>
                     <td class=text-center>$row[estado]</td>

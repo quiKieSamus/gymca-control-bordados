@@ -1,0 +1,1 @@
+<h1 class="text-center">Empieza a usar el sistema</h1>

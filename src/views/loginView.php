@@ -1,6 +1,11 @@
 <div class="container">
+  <?php
 
-  <form class="form-signin" style="width:50%;" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
+  if ($_GET['state'] === 'failure') {
+    echo "<p class='text-uppercase bg-danger text-danger lead'>Login Not Successful</p>";
+  }
+  ?>
+  <form class="form-signin" style="width:50%;" method="POST" action="../src/views/loginCheck.php">
     <h2 class="form-signin-heading">Inicia Sesión</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" id="inputEmail" name="mail" class="form-control" placeholder="Correo" required="" autofocus="">
@@ -16,23 +21,3 @@
 
 </div>
 <script src="../js/script.js"></script>
-
-<?php
-ini_set("display_errors", "1");
-ini_set("display_startup_errors", "1");
-error_reporting(E_ALL);
-
-if (isset($_GET['mail']) && isset($_GET['pwd'])) {
-  $email = $_GET['mail'];
-  $pwd = $_GET['pwd'];
-  require_once('../src/model/loginModel.php');
-  $loginModel = new loginModel;
-  if ($loginModel->checkLogin($email, $pwd) === true) {
-    echo "Login Successful";
-    header("https://youtube.com");
-  }
-} else {
-}
-
-
-?>
