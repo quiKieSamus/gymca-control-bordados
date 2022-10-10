@@ -1,6 +1,6 @@
 <?php 
 require_once('../src/db/db.php');
-class bordadoModel {
+class BordadoModel {
     private $db;
     private $con;
     function __construct()
@@ -25,6 +25,13 @@ class bordadoModel {
             //nothing was found
             return 0;
         }
+    }
+
+    public function insert($totalCloth, $embByCloth, $total, $desc, $doc, $type) {
+        $query = "INSERT INTO bordado(prenda_total, bordado_prenda, entrada, descripcion, documento, tipo_trabajo) VALUES ('$totalCloth', '$embByCloth', '$total', '$desc', '$doc', '$type')";
+        $result = $this->con->query($query);
+        return $result;
+
     }
 }
 

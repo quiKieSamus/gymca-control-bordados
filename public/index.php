@@ -28,10 +28,9 @@
         </div>
     </div> -->
     <?php
-    ini_set("display_errors", "1");
-    ini_set("display_startup_errors", "1");
-    error_reporting(E_ALL);
     require_once('../src/db/db.php'); ?>
+    <a href="http://localhost/gymca-control-bordados/public/?view=inputCliente">Ingresar Clientes</a>
+    <a href="http://localhost/gymca-control-bordados/public/?view=inputBordado">Ingresar Bordado</a>
     <a href="http://localhost/gymca-control-bordados/public/?view=cliente">Ver Clientes</a>
     <a href="http://localhost/gymca-control-bordados/public/?view=bordado">Ver Bordados</a>
     <a href="http://localhost/gymca-control-bordados/public/?view=login">Iniciar Sesión</a>

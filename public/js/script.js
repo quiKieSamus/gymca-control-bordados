@@ -34,14 +34,14 @@ const changeVisibility = (n, bool) => {
 //event
 
 const translateToEs = () => {
-    const clientTypeArr = document.querySelectorAll(".type");
-    for (let i = 0; i < clientTypeArr.length; i++) {
-        if (clientTypeArr[i].innerText === "internal") {
-            clientTypeArr[i].innerText = "Interno"
-        } else if (clientTypeArr[i].innerText === "external") {
-            clientTypeArr[i].innerText = "Externo";
+    const workTypeArr = document.querySelectorAll(".type");
+    for (let i = 0; i < workTypeArr.length; i++) {
+        if (workTypeArr[i].innerText === "i") {
+            workTypeArr[i].innerText = "Interno"
+        } else if (workTypeArr[i].innerText === "x") {
+            workTypeArr[i].innerText = "Externo";
         } else {
-            clientTypeArr[i].innerText = "error";
+            workTypeArr[i].innerText = "error";
         }
     }
 }

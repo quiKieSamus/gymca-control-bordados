@@ -13,6 +13,7 @@
     </thead>
     <tbody>
         <?php
+        $i = 0;
         while ($row = $bordadoData->fetch_assoc()) {
             echo "
                 <tr>
@@ -22,10 +23,11 @@
                     <td>$row[bordado_prenda]</td>
                     <td>$row[entrada]$</td>
                     <td>$row[descripcion]</td>
-                    <td class=text-center>$row[tipo_trabajo]</td>
+                    <td id=type$i class='text-center type'>$row[tipo_trabajo]</td>
                     <td class=text-center>$row[estado]</td>
                 </tr>
                 ";
+            $i++;
         }
 
         ?>

@@ -1,6 +1,10 @@
 <?php
-require_once('../src/db/db.php');
-class clienteModel
+if (include_once("../src/db/db.php") !== true) {
+    include_once("../src/db/db.php");
+} else {
+    include_once("../db/db.php");
+}
+class ClienteModel
 {
     private $db;
     private $con;
@@ -27,6 +31,22 @@ class clienteModel
             return 0;
         }
         
+    }
+
+    public function insert($name, $doc, $direccion) {
+        $query = "INSERT INTO cliente(nombre, documento, direccion) VALUES ('$name', '$doc', '$direccion')";
+        $result = $this->con->query($query);
+        return $result;
+    }
+
+    public function checkClientDoc ($doc) {
+        $query = "SELECT documento FROM cliente where documento='$doc'";
+        $result = $this->con->query($query);
+        if ($result->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
